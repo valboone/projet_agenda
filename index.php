@@ -44,7 +44,7 @@
 <?php include "footer.html"; ?>
 
   <div id="profile">
-    <button type="button" class="btn btn-info btn-lg btn-block"><a href="logout.php">Log Out</a></button>
+    <a href="logout.php" class="btn btn-info btn-lg btn-block">Log Out</a>
   </div>
 
 </body>

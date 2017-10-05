@@ -16,12 +16,32 @@
 			// Establishing Connection with Server by passing server_name, user_id and password as a parameter
 			//$connection = mysql_connect("localhost", "root", "");
 			// To protect MySQL injection for Security purpose
-			$username = stripslashes($username);
-			$password = stripslashes($password);
+			$username = htmlspecialchars($username);
+			$password = htmlspecialchars($password);
 
-			if ($username="admin" && $password="admin") {
-				$connect=1;
+
+			$users = json_decode(file_get_contents("users.json"), true);
+			$users = $users["users"];
+
+
+			$i=0;
+			$trouve=false;
+
+
+			while (!$trouve && $i<count($users)) {
+				$trouve = $users[$i]["name"] == $username;
+				++$i;
 			}
+
+			if ($trouve) {
+				if ($users[$i-1]["password"] == $password) {
+					$connect=1;
+				}				
+			}
+
+			// if ($username=="admin" && $password=="admin") {
+			// 	$connect=1;
+			// }
 			
 			//$username = mysql_real_escape_string($username);
 			//$password = mysql_real_escape_string($password);
