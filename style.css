@@ -1,4 +1,9 @@
- 
+body {
+  background-image: url(img_agenda);
+} 
+
+
+
 @media (max-width: 767px) {
     
 }
@@ -24,6 +29,7 @@
       background-color: #bdc3c7;
       color: white;
       padding: 15px;
+      opacity: 0.7;
     }
 
     header {
@@ -55,4 +61,17 @@
 
     .info_date {
         float: right;
+    }
+
+    .hour {
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      opacity: 0.5;
+    }
+
+    #logout {
+      float:right;
+      padding:5px;
+      border:dashed 1px gray
     }
