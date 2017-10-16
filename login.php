@@ -28,10 +28,12 @@
 			$trouve=false;
 
 
-			while (!$trouve && $i<count($users)) {
-				$trouve = $users[$i]["name"] == $username;
+			while ((!$trouve) && ($i<count($users))) {
+				$trouve = ($users[$i]["name"] == $username);
+				echo "$trouve";
 				++$i;
 			}
+
 
 			if ($trouve) {
 				if ($users[$i-1]["password"] == $password) {
@@ -57,6 +59,7 @@
 			} 
 
 			else {
+				echo $trouve;
 				echo "Username or Password is invalid";
 			}
 
