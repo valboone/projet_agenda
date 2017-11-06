@@ -21,6 +21,7 @@
 
 
 			$users = json_decode(file_get_contents("users.json"), true);
+			
 			$users = $users["users"];
 
 
@@ -60,7 +61,7 @@
 
 			else {
 				echo $trouve;
-				echo "Username or Password is invalid";
+				echo "Username or Password is invalid--";
 			}
 
 			//mysql_close($connection); // Closing Connection

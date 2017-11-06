@@ -27,7 +27,7 @@
 			$lieu = htmlspecialchars($lieu);
 
 
-			$conf = json_decode(file_put_contents("users.json"), true);
+			$conf = json_decode(file_put_contents("confs.json"), true);
 			$conf = $conf["conferences"];
 
 			$conf[] = array(
